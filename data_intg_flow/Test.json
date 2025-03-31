@@ -1,0 +1,279 @@
+{
+  "primary_pipeline" : "883bb5cf-bbb7-40a9-994e-e378b563a9b4",
+  "pipelines" : [ {
+    "nodes" : [ {
+      "outputs" : [ {
+        "id" : "7270ef32-cdd7-4fe5-8b5c-095f3f560e04",
+        "app_data" : {
+          "datastage" : {
+            "is_source_of_link" : "eee5091f-c21a-4cbb-9747-2bdddf154ad0"
+          },
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 2
+            }
+          },
+          "additionalProperties" : {
+            "enableAcp" : true
+          }
+        },
+        "schema_ref" : "3697574a-9ad1-47f0-be3c-6b0e14e66c73",
+        "parameters" : {
+          "final_delim" : "end",
+          "null_field_sep_flag" : false,
+          "null_field" : "'NULL'",
+          "file_location" : "file_system",
+          "firstLineColumnNames" : " ",
+          "buf_mode" : "default",
+          "read_file_as_one_column" : false,
+          "enableSchemalessDesign" : false,
+          "keepPartitions" : " ",
+          "file +" : [ ],
+          "rejects" : "continue",
+          "quote" : "double",
+          "connection_asset_id" : "",
+          "selection" : "file",
+          "missingFile" : " ",
+          "reportProgress" : "yes",
+          "file_format" : "sequential",
+          "columnNameCheck" : false,
+          "delim" : "','"
+        }
+      } ],
+      "op" : "PxSequentialFile",
+      "inputs" : [ {
+        "id" : "",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : 1
+            }
+          }
+        }
+      } ],
+      "id" : "6aa79346-274f-4185-a6a1-cbee4052adc5",
+      "type" : "binding",
+      "app_data" : {
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/PxSequentialFile.svg",
+          "x_pos" : 522.72,
+          "label" : "Sequential_file_1",
+          "y_pos" : 522.72
+        }
+      },
+      "parameters" : {
+        "combinability" : "auto",
+        "output_count" : 1,
+        "nls_map_name" : "UTF-8",
+        "input_count" : 0,
+        "execmode" : "default_seq",
+        "preserve" : -1,
+        "allow_column_mapping" : false
+      }
+    }, {
+      "outputs" : [ {
+        "id" : "",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "outPort",
+            "cardinality" : {
+              "min" : 0,
+              "max" : -1
+            }
+          }
+        }
+      } ],
+      "op" : "PxPeek",
+      "inputs" : [ {
+        "links" : [ {
+          "node_id_ref" : "6aa79346-274f-4185-a6a1-cbee4052adc5",
+          "type_attr" : "PRIMARY",
+          "id" : "eee5091f-c21a-4cbb-9747-2bdddf154ad0",
+          "app_data" : {
+            "datastage" : { },
+            "ui_data" : {
+              "decorations" : [ {
+                "image" : "/data-intg/flows/graphics/flows/link-output-handle--default-selected.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "x_pos" : -10,
+                "id" : "dec-3",
+                "position" : "source",
+                "y_pos" : -10,
+                "class_name" : "linkStartImage"
+              }, {
+                "image" : "/data-intg/flows/graphics/flows/noMeta-specific.svg",
+                "temporary" : false,
+                "outline" : false,
+                "distance" : 0,
+                "width" : 70,
+                "tooltip" : "No columns\nSpecific partition",
+                "x_pos" : -23,
+                "id" : "dec-6S",
+                "position" : "middle",
+                "y_pos" : 4,
+                "height" : 50
+              }, {
+                "temporary" : false,
+                "label_allow_return_key" : "save",
+                "label_single_line" : true,
+                "width" : 100,
+                "label_editable" : true,
+                "x_pos" : -18,
+                "id" : "dec-8",
+                "position" : "middle",
+                "label" : "Link_1",
+                "y_pos" : -20,
+                "height" : 80
+              } ]
+            }
+          },
+          "link_name" : "Link_1",
+          "port_id_ref" : "7270ef32-cdd7-4fe5-8b5c-095f3f560e04"
+        } ],
+        "id" : "b6b87d10-e1b5-4b7f-98c5-63a34600ac0f",
+        "app_data" : {
+          "ui_data" : {
+            "label" : "inPort",
+            "cardinality" : {
+              "min" : 1,
+              "max" : 1
+            }
+          }
+        },
+        "schema_ref" : "3697574a-9ad1-47f0-be3c-6b0e14e66c73",
+        "parameters" : {
+          "runtime_column_propagation" : 0
+        }
+      } ],
+      "id" : "b3c687cf-9d7a-4edf-b9e1-faa1b33ec827",
+      "type" : "execution_node",
+      "app_data" : {
+        "datastage" : {
+          "inputs_order" : "b6b87d10-e1b5-4b7f-98c5-63a34600ac0f",
+          "outputs_order" : ""
+        },
+        "ui_data" : {
+          "image" : "/data-intg/flows/graphics/palette/PxPeek.svg",
+          "x_pos" : 792,
+          "label" : "Peek_1",
+          "y_pos" : 522.72
+        }
+      },
+      "parameters" : {
+        "all" : " ",
+        "columns" : " ",
+        "enableFlowAcpControl" : true,
+        "part_type" : "auto",
+        "combinability" : "auto",
+        "OutputlinkOrderingList" : [ ],
+        "nrecs" : 10,
+        "selection" : " ",
+        "InputlinkOrderingList" : [ {
+          "link_label" : "0",
+          "link_name" : "Link_1"
+        } ],
+        "output_count" : 0,
+        "execmode" : "default_par",
+        "input_count" : 1,
+        "name" : "name",
+        "dataset" : " "
+      }
+    } ],
+    "description" : "",
+    "id" : "883bb5cf-bbb7-40a9-994e-e378b563a9b4",
+    "app_data" : {
+      "datastage" : {
+        "nls_map_name" : "",
+        "nls_locale" : "OFF"
+      },
+      "ui_data" : {
+        "comments" : [ ]
+      }
+    },
+    "runtime_ref" : "pxOsh"
+  } ],
+  "external_paramsets" : [ ],
+  "json_schema" : "https://api.dataplatform.ibm.com/schemas/common-pipeline/pipeline-flow/pipeline-flow-v3-schema.json",
+  "schemas" : [ {
+    "id" : "3697574a-9ad1-47f0-be3c-6b0e14e66c73",
+    "fields" : [ {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 100,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : "",
+        "max_length" : 100,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "COLUMN_1",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "CHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      },
+      "type" : "string"
+    }, {
+      "metadata" : {
+        "item_index" : 0,
+        "is_key" : false,
+        "min_length" : 100,
+        "decimal_scale" : 0,
+        "decimal_precision" : 0,
+        "description" : "",
+        "max_length" : 100,
+        "is_signed" : true
+      },
+      "nullable" : false,
+      "name" : "COLUMN_2",
+      "app_data" : {
+        "time_scale" : 0,
+        "odbc_type" : "CHAR",
+        "is_unicode_string" : false,
+        "type_code" : "STRING"
+      },
+      "type" : "string"
+    } ]
+  } ],
+  "doc_type" : "pipeline",
+  "id" : "cb792c50-0f4f-4db8-9cac-b00894bb706d",
+  "app_data" : {
+    "datastage" : {
+      "timestamp_format" : "",
+      "decimal_separator" : "",
+      "flowRunPriorityQueue" : "",
+      "time_format" : "",
+      "date_format" : "",
+      "message_handlers" : [ ],
+      "version" : "3.0.5"
+    },
+    "additionalProperties" : {
+      "transInputLinkMapper" : { },
+      "ELTDropdown" : {
+        "id" : "nesting",
+        "label" : "Generate nested SQL",
+        "value" : "NESTED_QUERY"
+      },
+      "disableParamsCacheOnFlow" : false,
+      "rcpLinkList" : [ ],
+      "globalAcp" : true,
+      "enableRCP" : false,
+      "isNewTransActive" : false,
+      "enableSchemaLessDesign" : false,
+      "runMode" : "ETL"
+    }
+  },
+  "version" : "3.0",
+  "parameters" : {
+    "local_parameters" : [ ]
+  }
+}

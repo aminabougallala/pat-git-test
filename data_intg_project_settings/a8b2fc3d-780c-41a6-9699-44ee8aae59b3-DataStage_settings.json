@@ -1,0 +1,38 @@
+{
+  "project" : {
+    "runMessageHandlerId" : "",
+    "formatDecimalSeparator" : "",
+    "jobNameSuffix" : ".DataStage job",
+    "sequenceNameSuffix" : ".DataStage sequence",
+    "runPriorityQueue" : "Medium",
+    "runArtifactRetention" : {
+      "retentionData" : { },
+      "enabled" : false
+    },
+    "runRemoteEngineEnforcement" : false,
+    "gitIntegration" : {
+      "enableGit" : true,
+      "gitProvider" : "git",
+      "gitFolder" : "",
+      "gitToken" : "{dsnextenc}P0gZMuoZ0fVEg+lOcqITWJBAZYWc27+T0hy7b1erxlmT4fwWSdsUgbbcU61u4uJR",
+      "gitURL" : "https://github.com/aminabougallala/pat-git-test.git",
+      "gitBranch" : ""
+    },
+    "formatTimeString" : "",
+    "runEnvironmentIds" : [ "8c720fff-3196-4a6d-8fe8-14e91d2cf543" ],
+    "formatDateString" : "",
+    "flowLimits" : {
+      "warnLimit" : 100
+    },
+    "nlsCollate" : "OFF",
+    "metricsRepository" : {
+      "enableMetrics" : false,
+      "connection" : {
+        "properties" : { }
+      }
+    },
+    "nlsMap" : "",
+    "formatTimestampString" : "",
+    "runEnvironmentNames" : [ "default_datastage_px" ]
+  }
+}
